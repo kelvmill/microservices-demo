@@ -44,6 +44,25 @@
     {{ else }}
     <link rel='shortcut icon' type='image/x-icon' href='{{ $.baseUrl }}/static/favicon.ico' />
     {{ end }}
+<script src="https://cdn.signalfx.com/o11y-gdi-rum/v2.5.1/splunk-otel-web.js" crossorigin="anonymous"></script>
+<script>
+    SplunkRum.init({
+        realm: "us1",
+        rumAccessToken: "HVf03G2w4bGVTBxr9uBMyw",
+        applicationName: "KLM-boutique",
+        deploymentEnvironment: "dev"
+    });
+</script>
+
+<script src="https://cdn.signalfx.com/o11y-gdi-rum/v2.5.1/splunk-otel-web-session-recorder.js" crossorigin="anonymous"></script>
+<script>
+    SplunkSessionRecorder.init({
+        app: "KLM-boutique",
+        realm: "us1",
+        rumAccessToken: "HVf03G2w4bGVTBxr9uBMyw"
+    });
+</script>
+
 </head>
 
 <body>
@@ -97,6 +116,5 @@
                 </div>
             </div>
         </div>
-
     </header>
     {{end}}
